@@ -10,6 +10,7 @@ class GUI():
         self.last_ccp = ""
         self.the_while_bool = False
         self.all_links = []
+        self.btn_720 = None
         self.root = Tk()
         self.root.geometry("600x600")
         self.canva()
@@ -39,9 +40,14 @@ class GUI():
                 label.pack()
 
     def Buttons_Entry(self):
-        self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720)).grid(row=2,column=1)
-        self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480)).grid(row=2,column=2)
-        self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360)).grid(row=2,column=3)
+        self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720))
+        self.btn_720.grid(row=2,column=1)
+        self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480))
+        self.btn_480.grid(row=2,column=2)
+
+        self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360))
+        self.btn_360.grid(row=2,column=3)
+
         self.add = Button(self.root,text="Add",height=5,width=10,command=lambda:self.Add_Link(self.entry.get()))
         self.add.place(relwidth=0.1,relheight=0.1,relx=0.6,rely=0.7)
         self.entry = Entry(self.root)
@@ -58,19 +64,37 @@ class GUI():
         
         if q == 720:
 
-            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,bg="Green",command=lambda:self.Quality(720)).grid(row=0,column=1)
-            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480)).grid(row=0,column=2)
-            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360)).grid(row=0,column=3)
+            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,bg="Green",command=lambda:self.Quality(720))
+            self.btn_720.grid(row=0,column=1)
+
+            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480))
+            self.btn_480.grid(row=0,column=2)
+            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360))
+            self.btn_360.grid(row=0,column=3)
         if q == 480:
 
-            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720)).grid(row=0,column=1)
-            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360)).grid(row=0,column=3)
-            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,bg="Green",command=lambda:self.Quality(480)).grid(row=0,column=2)
+            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720))
+            self.btn_720.grid(row=0,column=1)
+
+            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,bg="Green",command=lambda:self.Quality(480))
+            self.btn_480.grid(row=0,column=2)
+
+            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,command=lambda:self.Quality(360))
+            self.btn_360.grid(row=0,column=3)
+
+            
+
         if q == 360:
 
-            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720)).grid(row=0,column=1)
-            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480)).grid(row=0,column=2)
-            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,bg="Green",command=lambda:self.Quality(360)).grid(row=0,column=3)
+            self.btn_720 = Button(self.canvas,text=720,height=5,width=10,command=lambda:self.Quality(720))
+            self.btn_720.grid(row=0,column=1)
+
+            self.btn_480 = Button(self.canvas,text=480,height=5,width=10,command=lambda:self.Quality(480))
+            self.btn_480.grid(row=0,column=2)
+
+            self.btn_360 = Button(self.canvas,text=360,height=5,width=10,bg="Green",command=lambda:self.Quality(360))
+            self.btn_360.grid(row=0,column=3)
+
 
         self.quality = q
         print(self.quality)
